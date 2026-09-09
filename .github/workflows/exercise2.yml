@@ -9,6 +9,16 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          fetch-tags: 'true'
       - name: Commands
-        run: git log --oneline
+        run: |
+          touch commist.txt
+          git log --oneline > commits.txt
+      - name: Print info
+        run: cat commits.txt
+      - name: Tag pring
+        run: |
+          git tag
+          git checkout v1.0
+          cat README.md
   
