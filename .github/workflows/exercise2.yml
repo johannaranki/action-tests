@@ -1,0 +1,14 @@
+name: Exercise 2
+on: workflow_dispatch
+
+jobs:
+  fetch-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Commands
+        run: git log --oneline
+  
