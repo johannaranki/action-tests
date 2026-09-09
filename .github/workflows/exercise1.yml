@@ -15,6 +15,10 @@ jobs:
       - name: contents
         run: |
           ls /
-          ls /backup
+          ls backup
           cat info.txt
+  yesno:
+    runs-on: ububuntu-latest
+    steps:
+      - run: curl https://yesno.wtf/api
   
