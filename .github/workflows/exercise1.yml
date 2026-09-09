@@ -1,0 +1,20 @@
+name: Exercise 1
+on: [workflow_dispatch, issues]
+jobs:
+  files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: filecreation
+        run: |
+          touch info.txt
+          echo "Some data for the file" >> info.txt
+      - name: backup
+        run: |
+          mkdir backup
+          cp info.txt backup/
+      - name: contents
+        run: |
+          ls /
+          ls /backup
+          cat info.txt
+  
